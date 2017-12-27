@@ -1,0 +1,50 @@
+{
+  "name": "graphql-angular",
+  "description": "Graphql Angular Test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf _dist",
+    "commit": "git-cz",
+    "precommit": "lint-staged",
+    "compile": "tsc",
+    "lint": "tslint \"src/**/*.ts\"",
+    "prettier": "prettier --print-width 140 --single-quote --write \"**/*.{ts,js,json}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melxx001/graphql-angular.git"
+  },
+  "author": "Hicham El Hammouchi<hicham.elhammouchi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/melxx001/graphql-angular/issues"
+  },
+  "homepage": "https://github.com/melxx001/graphql-angular#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.8.2",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "typescript": "^2.6.2",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "revert", "build", "revert", "ci", "WIP"],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".*",
+      "subjectPatternErrorMsg": "Should be less than 100 characters",
+      "helpMessage": "Please, review readme"
+    }
+  },
+  "lint-staged": {
+    "*.json": ["yarn prettier", "git add"],
+    "*.{ts,js}": ["yarn prettier", "yarn lint", "git add"]
+  }
+}
