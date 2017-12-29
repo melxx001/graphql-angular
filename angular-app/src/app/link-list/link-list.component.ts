@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+
+import { ALL_LINKS_QUERY, AllLinkQueryResponse } from '../graphql';
 import { Link } from '../types';
 
 @Component({
@@ -7,20 +10,19 @@ import { Link } from '../types';
   styleUrls: ['./link-list.component.css']
 })
 export class LinkListComponent implements OnInit {
-  linksToRender: Link[] = [
-    {
-      id: '1',
-      description: 'The Coolest GraphQL Backend 😎',
-      url: 'https://www.graph.cool'
-    },
-    {
-      id: '2',
-      description: 'The Best GraphQL Client',
-      url: 'http://dev.apollodata.com/'
-    }
-  ];
+  allLinks: Link[] = [];
+  loading = true;
 
-  constructor() {}
+  constructor(private apollo: Apollo) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apollo
+      .watchQuery({
+        query: ALL_LINKS_QUERY
+      })
+      .valueChanges.subscribe((response: any) => {
+        this.allLinks = response.data.allLinks;
+        this.loading = response.data.loading;
+      });
+  }
 }

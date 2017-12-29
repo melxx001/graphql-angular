@@ -1,1 +1,2 @@
-<app-link-item *ngFor="let link of linksToRender" [link]="link"></app-link-item>
+<h4 *ngIf="loading">Loading...</h4>
+<app-link-item *ngFor="let link of allLinks" [link]="link"></app-link-item>
