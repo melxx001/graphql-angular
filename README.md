@@ -65,3 +65,12 @@ mutation CreateApolloLink {
   }
 }
 ```
+
+## Installing Apollo
+
+* apollo-client is the Apollo Client library
+* apollo-angular contains the bindings to use Apollo Client with Angular.
+* graphql-tag is a GraphQL parser. Every GraphQL operation you hand over to Apollo Client will have to be parsed by the gql function.
+* apollo-angular-link-http provides a similar HttpLink to Apollo’s HttpLink with one difference, it uses Angular’s HttpClient.
+* apollo-cache-inmemory is a cache implementation that supports all of Apollo Client 1.0’s features without the dependency on Redux.
+* graphql contains Facebook’s reference implementation of GraphQL - Apollo Client uses some of its functionality as well.
