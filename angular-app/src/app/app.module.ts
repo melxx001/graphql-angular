@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { CreateLinkComponent } from './create-link/create-link.component';
 import { LinkItemComponent } from './link-item/link-item.component';
 import { LinkListComponent } from './link-list/link-list.component';
+import { HeaderComponent } from './header/header.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { routes } from './app.routes';
 
 @NgModule({
-  declarations: [AppComponent, LinkItemComponent, LinkListComponent, CreateLinkComponent],
-  imports: [BrowserModule, FormsModule, GraphQLModule],
+  declarations: [AppComponent, LinkItemComponent, LinkListComponent, CreateLinkComponent, HeaderComponent],
+  imports: [BrowserModule, FormsModule, GraphQLModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent]
 })
