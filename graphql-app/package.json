@@ -10,7 +10,8 @@
     "compile": "tsc",
     "lint": "tslint \"src/**/*.ts\"",
     "prettier": "prettier --print-width 140 --single-quote --write \"**/*.{ts,js,json}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "graphcool": "gcf"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   "homepage": "https://github.com/melxx001/graphql-angular#readme",
   "dependencies": {},
   "devDependencies": {
+    "@angular/cli": "^1.6.2",
     "commitizen": "^2.9.6",
+    "graphcool": "^0.11.4",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "prettier": "^1.8.2",
